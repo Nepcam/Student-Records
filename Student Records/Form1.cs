@@ -26,18 +26,18 @@ namespace Student_Records
             // information from the textboxes
             student_name = textBoxName.Text;
             student_id = int.Parse(textBoxID.Text);
-            has_paid = textBoxFees.Text;
+            has_paid = checkBoxYes.Checked.ToString();
 
             // get Student class and set it as an object 
-            Student student = new Student(student_name, student_id);
+            Student student = new Student(student_name, student_id); // pass into the student object what the constructor instructs you to pass in.
             // student fee condition
-            if (has_paid == "no")
-            {
-                student.NotPay();
-            }
-            else if (has_paid == "yes")
+            if (checkBoxYes.Checked)
             {
                 student.Pay();
+            }
+            else if (checkBoxNo.Checked)
+            {
+                student.NotPay();
             }
 
             // display student object onto the listBox object

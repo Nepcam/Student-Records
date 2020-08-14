@@ -70,7 +70,6 @@ namespace Student_Records
         {
             // (Read only) 
             get { return _hasPaid; }
-        
         }
 
         /// <summary>
